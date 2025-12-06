@@ -24,7 +24,7 @@ class TodoViewModel(application: Application) : AndroidViewModel(application) {
     _showCompleted.value = show
   }
 
-  // DBの初回の読み込みが完了を管理するフラグ ── ❶
+  // DBの初回の読み込み中かを管理するフラグ
   private val _isLoading = MutableStateFlow(true)
   val isLoading = _isLoading.asStateFlow()
 
@@ -70,7 +70,7 @@ class TodoViewModel(application: Application) : AndroidViewModel(application) {
     }
   } // deleteCompletedTodosの閉じカッコ
 
-  // To-Do順の入れ替え(↑) ── ❷
+  // To-Do順の入れ替え(↑)
   fun moveUp(todo: Todo) {
     viewModelScope.launch {
       val current = showTodos.value
@@ -84,7 +84,7 @@ class TodoViewModel(application: Application) : AndroidViewModel(application) {
     }
   } // moveUpの閉じカッコ
 
-  // To-Do順の入れ替え(↓) ── ❸
+  // To-Do順の入れ替え(↓)
   fun moveDown(todo: Todo) {
     viewModelScope.launch {
       val current = showTodos.value

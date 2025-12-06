@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
 fun Main() {
   // ViewModelの取得
   val viewModel: TodoViewModel = viewModel()
-  // ViewModelのStateFlowをcollectAsStateWithLifecycle()でComposeのStateに変換する
+  // ViewModelのStateFlowをcollectAsStateWithLifecycleでComposeのStateに変換する
   val showTodos by viewModel.showTodos.collectAsStateWithLifecycle() // To-Doリスト
   val showCompleted by viewModel.showCompleted.collectAsStateWithLifecycle() //完了の表示
   val isLoading by viewModel.isLoading.collectAsStateWithLifecycle() // 読み込み中
