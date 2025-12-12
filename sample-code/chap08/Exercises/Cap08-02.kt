@@ -1,23 +1,42 @@
+// Closeableを実装したクラスを用意。InputStream等がこの方式
+class Work1 : java.io.Closeable {
+  override fun close() { // use関数のスコープを抜けると自動実行する
+    println("Work1:リソース開放")
+  }
+
+  fun work() {
+    println("Work1:work()実行")
+  }
+}
+
+// AutoCloseableを実装したクラスを用意。java.util.Scanner等がこの方式
+class Work2 : AutoCloseable {
+  override fun close() { // use関数のスコープを抜けると自動実行する
+    println("Work2:リソース開放")
+  }
+
+  fun process(): Int {
+    println("Work2:process()実行")
+    return (1..6).random()
+  }
+}
+
 fun main() {
-  // let：値があれば整形、なければ既定値（null判定に使う）
-  val s1: String? = "compose"
-  val s2: String? = null
-  println("letの結果1: ${s1?.let { it.take(3) } ?: "EMPTY"}")
-  println("letの結果2: ${s2?.let { it.take(3) } ?: "EMPTY"}")
+  // Closeableとuseを活用する一般的な方法
+  println("■パターン１ スタート")
+  val w1 = Work1()
+  w1.use { it.work() }
 
-  // run：thisで参照して“値”を返す（データの加工に使う）
-  val resultRun = "compose".run {
-    val head = take(3)
-    val len = length
-    "$head($len)"  // ← take(3) と lengthをくっつけて返す
+  // useを使わないならば、明示的にclose()を呼び出す必要がある（比較用）
+  println("■パターン２ スタート")
+  val w2 = Work1()
+  try {
+    w2.work()
+  } finally {
+    w2.close() // useと同様の効果を得るためには、try-finallyで書く必要がある
   }
-  println("runの結果: $resultRun")
-
-  // apply：設定して“同じオブジェクト”を返す（初期化などに使う）
-  val resultApply = "compose".apply {
-    val head = take(3)
-    val len = length
-    println("applyの中で: $head($len)")
-  }
-  println("applyの結果: $resultApply")
+  // AutoCloseableとuseを活用する一般的な方法
+  println("■パターン３ スタート")
+  val result = Work2().use { it.process() }
+  println("result=[$result]")
 }

@@ -1,23 +1,34 @@
+// 複数の関数を持つインタフェース
+interface NumOp {
+  fun inc(x: Int): Int
+  fun dec(x: Int): Int
+}
+
 fun main() {
-  // セーフコール（safe call）
-  val s1: String? = null
-  println("s1=[${s1?.length}]")
-  val s2: String? = "abc"
-  println("s2=[${s2?.length}]")
+  // その場限りのオブジェクト。インタフェースに沿って実装
+  val op = object : NumOp {
+    var count = 0
+    override fun inc(x: Int): Int {
+      count += x
+      return count
+    }
 
-  // エルビス演算子（Elvis operator）
-  val s3: String? = null
-  println("s3=[${s3 ?: "EMPTY"}]")
-  val s4: String? = "abc"
-  println("s4=[${s4 ?: "EMPTY"}]")
-
-  // 非nullアサーション
-  try {
-    val s5: String? = "abc"
-    println("s5.length=[${s5!!.length}]")
-    val s6: String? = null
-    println("s6.length=[${s6!!.length}]")
-  } catch (e: NullPointerException) {
-    println("NullPointerException 発生")
+    override fun dec(x: Int): Int {
+      count -= x
+      return count
+    }
   }
+  println("NumOp: inc=${op.inc(10)}")
+  println("NumOp: dec=${op.dec(3)}")
+
+  // その場限りのオブジェクト。インタフェースもなし
+  val counter = object {
+    var count = 0
+    fun hit() {
+      count++
+    }
+  }
+  counter.hit()
+  counter.hit()
+  println("Counter: count=${counter.count}")
 }
