@@ -66,13 +66,12 @@ class BookViewModel : ViewModel() {
           // 通信用ライブラリを使って情報取得
           val client = OkHttpClient()
           val request = Request.Builder().url(apiUrl).get().build()
-          val response = client.newCall(request).execute()
-
-          if (!response.isSuccessful) {
-            throw Exception("HTTPステータス:${response.code}")
+          val responseBody = client.newCall(request).execute().use { response ->
+            if (!response.isSuccessful) {
+              throw Exception("HTTPステータス:${response.code}")
+            }
+            response.body?.string() ?: ""
           }
-
-          val responseBody = response.body?.string() ?: ""
 
           // Gsonで通信結果をオブジェクト化
           val gson = Gson()
@@ -88,9 +87,9 @@ class BookViewModel : ViewModel() {
           message = "該当データなし"
         }
       } catch (e: IOException) {
-        message = "書籍情報の取得に失敗しました。\n${e.message}"
-      } catch (e: Exception) {
         message = "通信エラーが発生しました。時間をおいて再試行してください。\n${e.message}"
+      } catch (e: Exception) {
+        message = "書籍情報の取得に失敗しました。\n${e.message}"
       } finally {
         isLoading = false
       }
