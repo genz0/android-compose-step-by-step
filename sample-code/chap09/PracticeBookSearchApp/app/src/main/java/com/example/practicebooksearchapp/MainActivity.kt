@@ -79,7 +79,7 @@ fun Main(modifier: Modifier = Modifier) {
       }
     }
   }
-  // 処理中のプログレス表示
+  // 処理中のインジケータ表示
   if (viewModel.isLoading) {
     Box(
       modifier = Modifier
@@ -88,7 +88,7 @@ fun Main(modifier: Modifier = Modifier) {
         .background(Color.Black.copy(alpha = 0.5f)),
       contentAlignment = Alignment.Center,
     ) {
-      // 白い円形プログレスインジケーター
+      // 白い円形プログレスインジケータ
       CircularProgressIndicator(color = Color.White)
     }
   }
