@@ -23,13 +23,13 @@ enum class TimerState {
   PAUSED, // 一時停止状態
 }
 
+// DataStoreを利用するための拡張関数
+private val Context.dataStore by preferencesDataStore(name = "settings")
+
+// DataStoreに保存する際のキー
+private val totalTimeKey = longPreferencesKey("total_time")
+
 class TimerViewModel : ViewModel() {
-
-  // DataStoreを利用するための拡張関数
-  private val Context.dataStore by preferencesDataStore(name = "settings")
-
-  // DataStoreに保存する際のキー
-  private val totalTimeKey = longPreferencesKey("total_time")
 
   // タイマーの初期値(デフォルト60秒)
   private var initTime = 60_000L
@@ -145,6 +145,7 @@ class TimerViewModel : ViewModel() {
     timeLeft = totalTime
     finish = false
   }
+
   // DataStoreにカウント時間を保存し、初期値も更新する
   fun saveTotalTime(context: Context) {
     viewModelScope.launch {
