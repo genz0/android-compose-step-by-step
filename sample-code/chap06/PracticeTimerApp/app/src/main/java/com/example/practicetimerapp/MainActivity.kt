@@ -43,6 +43,7 @@ import com.example.practicetimerapp.ui.theme.PracticeTimerAppTheme
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.material3.VerticalDivider
 import android.widget.Toast
+import androidx.compose.foundation.layout.navigationBarsPadding
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -169,10 +170,11 @@ fun BottomView(viewModel: TimerViewModel) {
     modifier = Modifier
       .fillMaxWidth()
       .height(IntrinsicSize.Min)
+      .navigationBarsPadding()
       .padding(16.dp),
     horizontalArrangement = Arrangement.Center
   ) {
-    FilledIconButton( // ＋１分ボタン
+    FilledIconButton( // +1分ボタン
       onClick = { viewModel.plus1() },
       enabled = viewModel.canPlus1
     ) {
@@ -181,7 +183,7 @@ fun BottomView(viewModel: TimerViewModel) {
         contentDescription = "+1"
       )
     }
-    FilledIconButton( // ー１分ボタン
+    FilledIconButton( // -1分ボタン
       onClick = { viewModel.minus1() },
       enabled = viewModel.canMinus1
     ) {
