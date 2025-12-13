@@ -310,7 +310,7 @@ fun TodoCard(
           text = todo.memo,
           fontSize = 12.sp,
           maxLines = 3, // 3行まで表示
-          overflow = TextOverflow.Ellipsis // テキストが長い場合、３点リーダ(…)表示
+          overflow = TextOverflow.Ellipsis // テキストが長い場合、3点リーダ(…)表示
         )
       } // Columnの閉じカッコ　To-Doの内容（テキスト＋メモ）
 
