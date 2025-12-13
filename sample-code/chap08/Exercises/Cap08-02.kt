@@ -23,12 +23,12 @@ class Work2 : AutoCloseable {
 
 fun main() {
   // Closeableとuseを活用する一般的な方法
-  println("■パターン１ スタート")
+  println("■パターン1 スタート")
   val w1 = Work1()
   w1.use { it.work() }
 
   // useを使わないならば、明示的にclose()を呼び出す必要がある（比較用）
-  println("■パターン２ スタート")
+  println("■パターン2 スタート")
   val w2 = Work1()
   try {
     w2.work()
@@ -36,7 +36,7 @@ fun main() {
     w2.close() // useと同様の効果を得るためには、try-finallyで書く必要がある
   }
   // AutoCloseableとuseを活用する一般的な方法
-  println("■パターン３ スタート")
+  println("■パターン3 スタート")
   val result = Work2().use { it.process() }
   println("result=[$result]")
 }

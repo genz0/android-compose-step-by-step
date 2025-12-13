@@ -123,7 +123,7 @@ fun Main(modifier: Modifier = Modifier) {
 
   // NavHostで画面遷移を管理
   NavHost(navController = nav, startDestination = "preview", modifier = modifier) {
-    composable("preview") {// カメラプレビュー画面
+    composable("preview") { // カメラプレビュー画面
       CameraPreview(Modifier.fillMaxSize()) { bmp ->
         capturedBitmap = bmp // Bitmapを更新
         nav.navigate("recognize")
@@ -265,25 +265,25 @@ fun RecognizeView(
       horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
       Button(onClick = { // テキストの認識のボタン
-        isLoading = true // プログレス表示
+        isLoading = true // インジケータ表示
         recognizeText(bitmap) { resultBitmap, result ->
           // 認識結果を受け取り、状態変数にセットする。
           editBitmap = resultBitmap
           textList = result // 認識結果のリスト
           showSheet = true // ModalBottomSheetを表示
-          isLoading = false // プログレス解除
+          isLoading = false // インジケータ表示解除
         }
       }) {
         Icon(imageVector = Icons.Filled.TextFields, contentDescription = "文字読み取り")
       }
       Button(onClick = { // バーコード認識のボタン
-        isLoading = true // プログレス表示
+        isLoading = true // インジケータ表示
         recognizeBarcode(bitmap) { resultBitmap, result ->
           // 認識結果を受け取り、状態変数にセットする。
           editBitmap = resultBitmap
           textList = result // 認識結果のリスト
           showSheet = true // ModalBottomSheetを表示
-          isLoading = false // プログレス解除
+          isLoading = false // インジケータ表示解除
         }
       }) {
         Icon(imageVector = Icons.Filled.QrCodeScanner, contentDescription = "バーコード読取り")
@@ -318,7 +318,7 @@ fun RecognizeView(
           .verticalScroll(rememberScrollState())
       )
     }
-  }// ModalBottomSheetの閉じカッコ
+  } // ModalBottomSheetを表示の閉じカッコ
 
   // 処理中のインジケータ表示
   if (isLoading) {
