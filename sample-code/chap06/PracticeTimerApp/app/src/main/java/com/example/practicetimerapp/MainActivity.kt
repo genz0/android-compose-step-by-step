@@ -116,6 +116,7 @@ fun FinishDialog(
     })
 } // FinishDialogの閉じカッコ
 
+@SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
 fun TimerView(viewModel: TimerViewModel) {
   Column(
