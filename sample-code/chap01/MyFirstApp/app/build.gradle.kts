@@ -1,13 +1,14 @@
 plugins {
   alias(libs.plugins.android.application)
-  alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.compose)
 }
 
 android {
   namespace = "com.example.myfirstapp"
   compileSdk {
-    version = release(36)
+    version = release(36) {
+      minorApiLevel = 1
+    }
   }
 
   defaultConfig {
@@ -23,15 +24,15 @@ android {
   buildTypes {
     release {
       isMinifyEnabled = false
-      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+      proguardFiles(
+        getDefaultProguardFile("proguard-android-optimize.txt"),
+        "proguard-rules.pro"
+      )
     }
   }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
-  }
-  kotlinOptions {
-    jvmTarget = "11"
   }
   buildFeatures {
     compose = true
