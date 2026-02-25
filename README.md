@@ -16,12 +16,13 @@ https://gihyo.jp/book/2026/978-4-297-15378-6
 # 補足記事
 時間経過により、変化したポイントなどを紹介します。
 
-### ■Android Stdio Panda1対応
+### ■Android Studio Panda1対応(2026.2.27)
+本書の内容はAndroid Studio Otter | 2025.2.1 Patch 1を使うことが前提ですが、AndroidStudio Panda 1を使いたい場合のために対策を記します。
 
 AGPのバージョンなどが変わっています。詳細は[こちら](./md/20260225_panda1.md)。
 
 
-### ■Chapter09
+### ■Chapter09(2026.2.27)
 Google Books APIの動作はAPIキーを指定した方が安定します
 (指定しないと、ステータス429が返ってくることがある)。
 安定的に開発を進めるために、APIキーを取得しましょう。
