@@ -13,12 +13,14 @@ https://gihyo.jp/book/2026/978-4-297-15378-6
 # コードの変更について
 - mainブランチは、バグ修正やライブラリの更新などにより、書籍に掲載しているコードと異なっている場合があります。
 
+# リソース/サンプルコードのダウンロード
+GitHubのダウンロード機能を使ってもよいのですが、[こちら](https://drive.google.com/drive/folders/1UZ6FpVQoBIStMwHoM2hBUBsGjXkimvHD)からダウンロードできるようにしました。  
+
 # 補足記事
 時間経過により、変化したポイントなどを紹介します。
 
 ### ■Android Studio Panda1対応(2026.2.27)
-本書の内容はAndroid Studio Otter | 2025.2.1 Patch 1を使うことが前提ですが、AndroidStudio Panda 1を使いたい場合のために対策を記します。
-
+本書の内容はAndroid Studio Otter | 2025.2.1 Patch 1を使うことが前提ですが、AndroidStudio Panda 1を使いたい場合のために対策を記します。  
 AGPのバージョンなどが変わっています。詳細は[こちら](./md/20260225_panda1.md)。
 
 
