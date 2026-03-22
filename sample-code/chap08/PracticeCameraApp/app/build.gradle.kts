@@ -41,14 +41,14 @@ dependencies {
   implementation("com.google.mlkit:barcode-scanning:17.3.0") // ML Kit barcode-scanning
   implementation("com.google.mlkit:text-recognition-japanese:16.0.1") // ML Kit text-recognition
 
-  implementation("androidx.camera:camera-camera2:1.5.2")  // CameraX
-  implementation("androidx.camera:camera-core:1.5.2")
-  implementation("androidx.camera:camera-lifecycle:1.5.2")
-  implementation("androidx.camera:camera-view:1.5.2")
+  implementation("androidx.camera:camera-camera2:1.5.3")  // CameraX
+  implementation("androidx.camera:camera-core:1.5.3")
+  implementation("androidx.camera:camera-lifecycle:1.5.3")
+  implementation("androidx.camera:camera-view:1.5.3")
   implementation("androidx.compose.material:material-icons-extended") // material-icons-extended
 
   implementation("com.google.accompanist:accompanist-permissions:0.37.3") // Permissions
-  implementation("androidx.navigation:navigation-compose:2.9.6") // Navigation
+  implementation("androidx.navigation:navigation-compose:2.9.7") // Navigation
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
