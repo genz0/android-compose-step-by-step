@@ -19,6 +19,10 @@ GitHubのダウンロード機能を使ってもよいのですが、[こちら]
 # 補足記事
 時間経過により、変化したポイントなどを紹介します。
 
+### Android Studio Panda 3 | 2025.3.3 Patch 1用 対応(2026.4.18)
+新しいAndroid Studioを使うための変更ポイントです。
+今回は、composeBom (Compose Bill of Materials)が大きくバージョンアップしているようです。詳細は[こちら](./md/20260418_panda3.md)。
+
 ### ■Android Studio Panda 2 | 2025.3.2 対応(2026.3.22)
 本書の内容はAndroid Studio Otter | 2025.2.1 Patch 1を使うことが前提ですが、AndroidStudio Panda 2を使いたい場合のために対策を記します。  
 AGPのバージョンなどが変わっています。詳細は[こちら](./md/20260322_panda2.md)。
