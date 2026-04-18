@@ -3,7 +3,7 @@ plugins {
   alias(libs.plugins.kotlin.compose)
   // Kotlin 2系に対応したKSP
   //id("com.google.devtools.ksp") version "2.0.21-1.0.28"
-  id("com.google.devtools.ksp") version "2.3.5" // Kotlin 2系 AndroidStudio Pandaに対応したKSP
+  id("com.google.devtools.ksp") version "2.3.6" // Kotlin 2系 AndroidStudio Pandaに対応したKSP
 
 }
 
@@ -28,10 +28,7 @@ android {
   buildTypes {
     release {
       isMinifyEnabled = false
-      proguardFiles(
-        getDefaultProguardFile("proguard-android-optimize.txt"),
-        "proguard-rules.pro"
-      )
+      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
   compileOptions {
@@ -49,6 +46,7 @@ dependencies {
   ksp("androidx.room:room-compiler:2.8.4") // KSP
 
   implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
+  implementation("androidx.compose.material:material-icons-extended") // material-icons-extended
 
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
