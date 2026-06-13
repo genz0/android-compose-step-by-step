@@ -16,8 +16,15 @@ https://gihyo.jp/book/2026/978-4-297-15378-6
 # リソース/サンプルコードのダウンロード
 GitHubのダウンロード機能を使ってもよいのですが、[こちら](https://drive.google.com/drive/folders/1UZ6FpVQoBIStMwHoM2hBUBsGjXkimvHD)からダウンロードできるようにしました。  
 
+利用するAndroid Studioのバージョンに近いものを選んでください。
+
 # 補足記事
 時間経過により、変化したポイントなどを紹介します。
+
+## ■Android Studio Quail 1 | 2026.1.1 Patch 1 対応(2026.6.13)
+新しいAndroid Studioを使うための変更ポイントです。
+今回は、一部のコードでワーニングが出るよになりました。その対応方法を追記しています。詳細は[こちら](./md/20260613_quail1.md)。
+
 
 ## ■Android Studio Panda 3 | 2025.3.3 Patch 1 対応(2026.4.18)
 新しいAndroid Studioを使うための変更ポイントです。
