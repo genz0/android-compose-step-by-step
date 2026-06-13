@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.practicediceapp.ui.theme.PracticeDiceAppTheme
 import kotlinx.coroutines.delay
+import kotlin.time.Duration.Companion.milliseconds
 
 
 class MainActivity : ComponentActivity() {
@@ -77,7 +78,7 @@ fun Main(modifier: Modifier = Modifier) {
         dice1 = (0..5).random()
         dice2 = (0..5).random()
         dice3 = (0..5).random()
-        delay(50) // 短い待ち時間を入れて連続的に変化させる
+        delay(50.milliseconds) // 短い待ち時間を入れて連続的に変化させる
       }
       // 表示メッセージの組み立て
       val sum = dice1 + dice2 + dice3 + 3
