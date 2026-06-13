@@ -15,6 +15,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.first
+import kotlin.time.Duration.Companion.milliseconds
 
 // タイマーの状態を表すenum
 enum class TimerState {
@@ -113,7 +114,7 @@ class TimerViewModel : ViewModel() {
     timer = viewModelScope.launch {
       // 実行中且つ残り時間がある間ループ
       while (timeLeft > 0 && isRunning) {
-        delay(100) //100ms待つ(スレッドをブロックしないサスペンド関数)
+        delay(100.milliseconds) //100ms待つ(スレッドをブロックしないサスペンド関数)
         timeLeft -= 100 // 100ms減らす
       }
       // カウントダウンが終わっていれば、終了状態に遷移
