@@ -6,15 +6,13 @@ plugins {
 android {
   namespace = "com.example.practicecameraapp"
   compileSdk {
-    version = release(36) {
-      minorApiLevel = 1
-    }
+    version = release(37)
   }
 
   defaultConfig {
     applicationId = "com.example.practicecameraapp"
     minSdk = 30
-    targetSdk = 36
+    targetSdk = 37
     versionCode = 1
     versionName = "1.0"
 
@@ -24,7 +22,8 @@ android {
   buildTypes {
     release {
       optimization {
-        enable = false
+        enable = true
+        packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
       }
     }
   }
@@ -42,14 +41,14 @@ dependencies {
   implementation("com.google.mlkit:barcode-scanning:17.3.0") // ML Kit barcode-scanning
   implementation("com.google.mlkit:text-recognition-japanese:16.0.1") // ML Kit text-recognition
 
-  implementation("androidx.camera:camera-camera2:1.6.1")  // CameraX
-  implementation("androidx.camera:camera-core:1.6.1")
-  implementation("androidx.camera:camera-lifecycle:1.6.1")
-  implementation("androidx.camera:camera-view:1.6.1")
+  implementation("androidx.camera:camera-camera2:1.6.2")  // CameraX
+  implementation("androidx.camera:camera-core:1.6.2")
+  implementation("androidx.camera:camera-lifecycle:1.6.2")
+  implementation("androidx.camera:camera-view:1.6.2")
   implementation("androidx.compose.material:material-icons-extended") // material-icons-extended
 
   implementation("com.google.accompanist:accompanist-permissions:0.37.3") // Permissions
-  implementation("androidx.navigation:navigation-compose:2.9.8") // Navigation
+  implementation("androidx.navigation:navigation-compose:2.10.2") // Navigation
 
   implementation(platform(libs.androidx.compose.bom))
   implementation(libs.androidx.activity.compose)
