@@ -6,15 +6,13 @@ plugins {
 android {
   namespace = "com.example.practicetimerapp"
   compileSdk {
-    version = release(36) {
-      minorApiLevel = 1
-    }
+    version = release(37)
   }
 
   defaultConfig {
     applicationId = "com.example.practicetimerapp"
     minSdk = 30
-    targetSdk = 36
+    targetSdk = 37
     versionCode = 1
     versionName = "1.0"
 
@@ -24,7 +22,8 @@ android {
   buildTypes {
     release {
       optimization {
-        enable = false
+        enable = true
+        packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
       }
     }
   }
@@ -38,8 +37,8 @@ android {
 }
 
 dependencies {
-  implementation("androidx.datastore:datastore-preferences:1.2.1")
-  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
+  implementation("androidx.datastore:datastore-preferences:1.3.0")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0")
 
   implementation(platform(libs.androidx.compose.bom))
   implementation(libs.androidx.activity.compose)
