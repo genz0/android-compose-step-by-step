@@ -6,15 +6,13 @@ plugins {
 android {
   namespace = "com.example.practicebooksearchapp"
   compileSdk {
-    version = release(36) {
-      minorApiLevel = 1
-    }
+    version = release(37)
   }
 
   defaultConfig {
     applicationId = "com.example.practicebooksearchapp"
     minSdk = 30
-    targetSdk = 36
+    targetSdk = 37
     versionCode = 1
     versionName = "1.0"
 
@@ -24,7 +22,8 @@ android {
   buildTypes {
     release {
       optimization {
-        enable = false
+        enable = true
+        packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
       }
     }
   }
@@ -39,10 +38,10 @@ android {
 
 dependencies {
   implementation("io.coil-kt.coil3:coil-compose:3.4.0")
-  implementation("com.google.code.gson:gson:2.14.0")
+  implementation("com.google.code.gson:gson:2.15.0")
   implementation("io.coil-kt.coil3:coil-network-okhttp:3.4.0")
-  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
-  implementation("androidx.navigation:navigation-compose:2.9.8")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0")
+  implementation("androidx.navigation:navigation-compose:2.10.2")
 
   implementation(platform(libs.androidx.compose.bom))
   implementation(libs.androidx.activity.compose)
