@@ -9,15 +9,13 @@ plugins {
 android {
   namespace = "com.example.practicetodoapp"
   compileSdk {
-    version = release(36) {
-      minorApiLevel = 1
-    }
+    version = release(37)
   }
 
   defaultConfig {
     applicationId = "com.example.practicetodoapp"
     minSdk = 30
-    targetSdk = 36
+    targetSdk = 37
     versionCode = 1
     versionName = "1.0"
 
@@ -27,7 +25,8 @@ android {
   buildTypes {
     release {
       optimization {
-        enable = false
+        enable = true
+        packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
       }
     }
   }
@@ -41,11 +40,11 @@ android {
 }
 
 dependencies {
-  implementation("androidx.room:room-runtime:2.8.4") // Room関連
-  implementation("androidx.room:room-ktx:2.8.4")
-  ksp("androidx.room:room-compiler:2.8.4") // KSP
+  implementation("androidx.room:room-runtime:2.8.5") // Room関連
+  implementation("androidx.room:room-ktx:2.8.5")
+  ksp("androidx.room:room-compiler:2.8.5") // KSP
 
-  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
+  implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0")
   implementation("androidx.compose.material:material-icons-extended") // material-icons-extended
 
   implementation(platform(libs.androidx.compose.bom))
