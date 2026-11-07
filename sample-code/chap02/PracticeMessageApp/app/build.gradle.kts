@@ -6,15 +6,13 @@ plugins {
 android {
   namespace = "com.example.practicemessageapp"
   compileSdk {
-    version = release(36) {
-      minorApiLevel = 1
-    }
+    version = release(37)
   }
 
   defaultConfig {
     applicationId = "com.example.practicemessageapp"
     minSdk = 30
-    targetSdk = 36
+    targetSdk = 37
     versionCode = 1
     versionName = "1.0"
 
@@ -24,7 +22,8 @@ android {
   buildTypes {
     release {
       optimization {
-        enable = false
+        enable = true
+        packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
       }
     }
   }
