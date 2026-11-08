@@ -21,13 +21,16 @@ GitHubのダウンロード機能を使ってもよいのですが、[こちら]
 # 補足記事
 時間経過により、変化したポイントなどを紹介します。
 
+## ■Android Studio Rabbit 2 | 2026.2.2 Patch 1 対応(2026.11.07)
+新しいAndroid Studioを使うための変更ポイントです。  
+今回は、前回からあまり変化はありませんが、ビルドSDKの標準が37になります。各種ライブラリの更新がありました。詳細は[こちら](./md/20261107_rabbit2.md)。
+
 ## ■Android Studio Quail 1 | 2026.1.1 Patch 1 対応(2026.6.13)
-新しいAndroid Studioを使うための変更ポイントです。
+新しいAndroid Studioを使うための変更ポイントです。  
 今回は、一部のコードでワーニングが出るよになりました。その対応方法を追記しています。詳細は[こちら](./md/20260613_quail1.md)。
 
-
 ## ■Android Studio Panda 3 | 2025.3.3 Patch 1 対応(2026.4.18)
-新しいAndroid Studioを使うための変更ポイントです。
+新しいAndroid Studioを使うための変更ポイントです。  
 今回は、composeBom (Compose Bill of Materials)が大きくバージョンアップしているようです。詳細は[こちら](./md/20260418_panda3.md)。
 
 ## ■Android Studio Panda 2 | 2025.3.2 対応(2026.3.22)
